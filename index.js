@@ -26,7 +26,9 @@ app.use( routes );
 // });
 
 // M O N G O O S E  D B //
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlebooks',{ useUnifiedTopology: true }, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlebooks',{ useUnifiedTopology: true , useNewUrlParser: true, useCreateIndex: true,
+useFindAndModify: false
+});
 
 
 app.listen(PORT, () => {
